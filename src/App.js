@@ -7,8 +7,6 @@ const App = () => (
   <Router>
     <Switch>
       <Route path="/" exact>
-      </Route>
-      <Route path="/map-chart" exact>
         <MapChart />
       </Route>
       {/* Add more Routes Here */}
