@@ -13,7 +13,7 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
 
 const MapChart = () => {
-  const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+  const [position, setPosition] = useState({ coordinates: [-104.404259, 56.755051], zoom: 3 });
   const [emissions, setEmissions] = useState([]);
 
   function handleZoomIn() {
