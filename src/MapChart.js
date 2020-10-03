@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -7,11 +7,14 @@ import {
   Marker
 } from "react-simple-maps";
 
+import api from "./api";
+
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
 
 const MapChart = () => {
   const [position, setPosition] = useState({ coordinates: [0, 0], zoom: 1 });
+  const [emissions, setEmissions] = useState([]);
 
   function handleZoomIn() {
     if (position.zoom >= 4) return;
@@ -27,8 +30,42 @@ const MapChart = () => {
     setPosition(position);
   }
 
+  function determineMarkerSize (emissionValue) {
+    if(emissionValue < 100) {
+      return 1;
+    } else if (emissionValue => 100 && emissionValue < 1000) {
+      return 2;
+    } else if(emissionValue >= 1000) {
+      return 3;
+    }
+  }
+
+  function determineMarkerColour (emissionValue) {
+    if(emissionValue < 100) {
+      return "#fad48e";
+    } else if (emissionValue => 100 && emissionValue < 1000) {
+      return "#c49743";
+    } else if(emissionValue >= 1000) {
+      return "#9c6705";
+    }
+  }
+
+  function buildMarkers(dataArray, type) {
+    if(type = "emissions" && dataArray.length > 0) {
+      return  dataArray.map(e => <Marker coordinates={[e.longitude, e.latitude]}>
+      <circle r={determineMarkerSize(e.emissions)} fill={determineMarkerColour(e.emissions)} />
+    </Marker>)
+    }
+  }
+
+  useEffect(async () => {
+    const response = await api.getEmissions();
+    setEmissions(response.data)
+  }, [])
+
+
   return (
-    <div>
+    <div id="mapContainer">
       <ComposableMap>
         <ZoomableGroup
           zoom={position.zoom}
@@ -44,38 +81,10 @@ const MapChart = () => {
               ))
             }
           </Geographies>
-        <Marker coordinates={[-106.317,58.339 ]}>
-            <circle r={1} fill="#F53" />
-          </Marker>
+          {buildMarkers(emissions, "emissions")}
+
         </ZoomableGroup>
       </ComposableMap>
-      <div className="controls">
-        <button onClick={handleZoomIn}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="3"
-          >
-            <line x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </button>
-        <button onClick={handleZoomOut}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="3"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </button>
-      </div>
     </div>
   );
 };
