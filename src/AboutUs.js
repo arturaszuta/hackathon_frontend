@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
       spacing: 10,
       
     },
+    nameHeadings: {
+        color: 'darkseagreen',
+    },
   }));
 
 const AboutUs = () => {
@@ -38,7 +41,7 @@ const AboutUs = () => {
                             <CardMedia
                             className={classes.media}
                             image={require('./npxLogo.png')}
-                            title="emissions map"
+                            title="npx logo"
                             />
                 </Card>
             </GridListTile>
@@ -49,7 +52,42 @@ const AboutUs = () => {
                         title="About Us"
                         subheader="NPX Innovation"
                     />
+                    <GridList cols={4} cellHeight={200} spacing={4} >
+                    <GridListTile cols={1}>
+                        <Card className={classes.root}>
+                            <CardHeader
+                                className={classes.nameHeadings}
+                                title="Aarti Vasudevan"
+                            />
+                        </Card>
+                    </GridListTile>
+                    <GridListTile cols={1}>
+                        <Card className={classes.root}>
+                            <CardHeader
+                                className={classes.nameHeadings}
+                                title="Arturas Zuta"
+                            />
+                        </Card>
+                    </GridListTile>
+                    <GridListTile cols={1}>
+                        <Card className={classes.root}>
+                            <CardHeader
+                                className={classes.nameHeadings}
+                                title="Emma Houck"
+                            />
+                        </Card>
+                    </GridListTile>
+                    <GridListTile cols={1}>
+                        <Card className={classes.root}>
+                            <CardHeader
+                                className={classes.nameHeadings}
+                                title="Quinn Hodges"
+                            />
+                        </Card>
+                    </GridListTile>
+                </GridList>
                 </Card>
+                
             </GridListTile>
         </GridList>
         </div>
