@@ -42,11 +42,16 @@ const MapChart = () => {
 
   function determineMarkerColour (emissionValue) {
     if(emissionValue < 100) {
-      return "#fad48e";
+      //return "#fad48e";
+      //green
+      return "#248f24";
     } else if (emissionValue => 100 && emissionValue < 1000) {
+      //yellow
       return "#c49743";
     } else if(emissionValue >= 1000) {
-      return "#9c6705";
+      //return "#9c6705";
+      //red
+      return "#ff1a1a";
     }
   }
 
@@ -67,7 +72,16 @@ const MapChart = () => {
 
 
   return (
+    <div id="body">
     <div id="mapContainer">
+    <h1>
+        CO Emissions by Tonnes <br/> Canada | 2018
+    </h1>
+    {/* <svg>
+      <rect width="100" height="40" fill="#248f24" stroke-width="3" stroke="rgb(0,0,0)" x="30px" />
+      <rect width="100" height="40" fill="#c49743" stroke-width="3" stroke="rgb(0,0,0)" x="130px"/>
+      <rect width="100" height="40" fill="#ff1a1a" stroke-width="3" stroke="rgb(0,0,0)" x="230px"/>
+    </svg> */}
       <ComposableMap>
         <ZoomableGroup
           zoom={position.zoom}
@@ -87,6 +101,7 @@ const MapChart = () => {
 
         </ZoomableGroup>
       </ComposableMap>
+    </div>
     </div>
   );
 };
