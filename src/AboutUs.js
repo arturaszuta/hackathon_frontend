@@ -11,18 +11,21 @@ const useStyles = makeStyles((theme) => ({
     headings: {
         color: 'darkgrey',
         alignItems: 'Center',
+        textAlign: 'Center'
     },
     root: {
         margin: 8,
-        height: 450,
+        height: 700,
     },
     media: {
       height: 50,
-      width: 170,
-      paddingTop: '65.25%', // 16:9
+      width: 80,
+      paddingTop: '100%', // 16:9
+      paddingRight: '35%',
       paddingLeft: '35%',
+      paddingBotton: '35%',
       spacing: 10,
-      
+      alignItems: 'Center'
     },
     nameHeadings: {
         color: 'darkseagreen',
@@ -33,14 +36,19 @@ const AboutUs = () => {
     const classes = useStyles();
     return (
         <div>
-        <GridList cols={4} cellHeight={400} spacing={20} >
+        <GridList cols={4} cellHeight={600} >
             <GridListTile cols={1}>
                 <Card className={classes.root}>
-                        
+
                             <CardMedia
                             className={classes.media}
                             image={require('./npxLogo.png')}
                             title="npx logo"
+                            />
+                            <CardHeader
+                                className={classes.headings}
+                                // title="About Us"
+                                subheader="NPX is an innovation and project management start-up in the nuclear energy sector."
                             />
                 </Card>
             </GridListTile>
@@ -51,13 +59,18 @@ const AboutUs = () => {
                         title="About Us"
                         subheader="NPX Innovation"
                     />
-                    <GridList cols={4} cellHeight={200} spacing={4} >
+                    <GridList cols={4} cellHeight={500} spacing={4} >
                     <GridListTile cols={1}>
                         <Card className={classes.root}>
                             <CardHeader
                                 className={classes.nameHeadings}
                                 title="Aarti Vasudevan"
+                                subheader="Innovation Catalyst intern, NPX. Full time music nerd, and learning about front-end systems everyday"
                             />
+                            <CardMedia
+                                className={classes.media}
+                                image={require('./memberPics/aarti.JPG')}
+                                title="aarti"/>
                         </Card>
                     </GridListTile>
                     <GridListTile cols={1}>
@@ -65,7 +78,13 @@ const AboutUs = () => {
                             <CardHeader
                                 className={classes.nameHeadings}
                                 title="Arturas Zuta"
+                                subheader="Innovation Catalyst, NPX.
+                                 Full Stack Developer. Anything/everything tech enthusiast."
                             />
+                            <CardMedia
+                                className={classes.media}
+                                image={require('./memberPics/arturas.jpg')}
+                                title="arturas"/>
                         </Card>
                     </GridListTile>
                     <GridListTile cols={1}>
@@ -73,7 +92,13 @@ const AboutUs = () => {
                             <CardHeader
                                 className={classes.nameHeadings}
                                 title="Emma Houck"
+                                subheader="Innovation Catalyst intern, NPX. 
+                                uWaterloo Mechatronics Engineering, cute dog enthusiast."
                             />
+                            <CardMedia
+                                className={classes.media}
+                                image={require('./memberPics/emma.jpg')}
+                                title="emma"/>
                         </Card>
                     </GridListTile>
                     <GridListTile cols={1}>
@@ -81,6 +106,7 @@ const AboutUs = () => {
                             <CardHeader
                                 className={classes.nameHeadings}
                                 title="Quinn Hodges"
+                                subheader="Innovation Catalyst, NPX"
                             />
                         </Card>
                     </GridListTile>
