@@ -72,7 +72,8 @@ const MapChart = () => {
 
 
   return (
-    <div id="body">
+    // <div id="body">
+    <div>
     <div id="mapContainer">
     <h1>
         CO Emissions by Tonnes <br/> Canada | 2018
