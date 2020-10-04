@@ -6,8 +6,10 @@ const server = axios.create({
 
 const getEmissions = (province = null) => server.get(`/finaldata/emissions${province ? '?province=' + province : ''}`);
 const getOdiac = (province = null) => server.get(`/finaldata/odiac${province ? '?province=' + province : ''}`);
+const getSweden = () => server.get(`/finaldata/swedenodiac`);
 
 export default {
   getEmissions,
-  getOdiac
+  getOdiac,
+  getSweden
 };
