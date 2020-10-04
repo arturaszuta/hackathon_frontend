@@ -13,28 +13,23 @@ const App = () => (
     <Router>
       <Header />
       <Switch>
-        <div className="sub-container">
-          <Route path="/">
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home" exact>
-            <MainContent />
-            <Home />
-          </Route>
-          <Route path="/AboutUs" exact>
-            <AboutUs />
-          </Route>
-          <Route path="/DataInfo" >
-            <DataInfo />
-          </Route>
-          <Route path="/MapChart" >
-            <MapChart />
-          </Route>
-        </div>
+        <Redirect from="/" to="/home" exact />
+        <Route path="/home" exact>
+          <MainContent />
+          <Home />
+        </Route>
+        <Route path="/AboutUs" exact>
+          <AboutUs />
+        </Route>
+        <Route path="/DataInfo" exact>
+          <DataInfo />
+        </Route>
+        <Route path="/MapChart" exact>
+          <MapChart />
+        </Route>
       </Switch>
     </Router>
-  </div>
-
+  </div >
 );
 
 export default App;

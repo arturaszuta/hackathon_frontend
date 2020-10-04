@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
 import {
-  ComposableMap,
+  ComposableMap as UCM,
   Geographies,
   Geography,
   ZoomableGroup,
   Marker
 } from "react-simple-maps";
 
-import api from "./api";
 import useEmissions from "./hooks/useEmissions";
+
+const ComposableMap = styled(UCM)`
+  max-height: calc(100vh - 170px);
+  width: 100vw;
+`;
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
@@ -16,16 +21,6 @@ const geoUrl =
 const MapChart = () => {
   const [position, setPosition] = useState({ coordinates: [-104.404259, 56.755051], zoom: 3 });
   const emissions = useEmissions();
-
-  function handleZoomIn() {
-    if (position.zoom >= 4) return;
-    setPosition(pos => ({ ...pos, zoom: pos.zoom * 2 }));
-  }
-
-  function handleZoomOut() {
-    if (position.zoom <= 1) return;
-    setPosition(pos => ({ ...pos, zoom: pos.zoom / 2 }));
-  }
 
   function handleMoveEnd(position) {
     setPosition(position);
@@ -57,8 +52,8 @@ const MapChart = () => {
   }
 
   function buildMarkers(dataArray, type) {
-    if (type = "emissions" && dataArray.length > 0) {
-      return dataArray.map(e => <Marker coordinates={[e.longitude, e.latitude]}>
+    if (type === "emissions" && dataArray.length > 0) {
+      return dataArray.map((e, keyAsIndex) => <Marker key={keyAsIndex} coordinates={[e.longitude, e.latitude]}>
         <circle r={determineMarkerSize(e.emissions)}
           fill={determineMarkerColour(e.emissions)}
           fill-opacity="0.4" />
@@ -73,7 +68,7 @@ const MapChart = () => {
       <div id="mapContainer">
         <h1>
           CO Emissions by Tonnes <br /> Canada | 2018
-    </h1>
+        </h1>
         {/* <svg>
       <rect width="100" height="40" fill="#248f24" stroke-width="3" stroke="rgb(0,0,0)" x="30px" />
       <rect width="100" height="40" fill="#c49743" stroke-width="3" stroke="rgb(0,0,0)" x="130px"/>
