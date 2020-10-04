@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
-import GridList  from '@material-ui/core/GridList';
+import Grid  from '@material-ui/core/Grid';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import {Link} from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: 300,
       margin: 8,
-      height: '100%'
+      height: '400px'
     },
     media: {
       height: 100,
@@ -34,7 +34,7 @@ const MainContent = () => {
     const classes = useStyles();
   
     return (
-    <GridList cols={6} cellHeight={400} spacing={20} >
+    <Grid container justify="space-around" cols={6} cellHeight={400} spacing={20} direction="row">
         
       <Card className={classes.root}>
             <CardHeader
@@ -116,7 +116,7 @@ const MainContent = () => {
           </Link>
          </CardActionArea>
        </Card>
-     </GridList>
+     </Grid>
     );
   }
   

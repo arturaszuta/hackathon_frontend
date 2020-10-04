@@ -34,13 +34,13 @@ const Header = () => {
     const classes = useStyles();
     const location = useLocation();
     var showBackBtn = false;
-    if(location.pathname!="/"){
+    if(location.pathname!="/home"){
       showBackBtn = true;
     }
     return (
         <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <Link to="/"><img src={Backbtn} style={{ display: showBackBtn ? "block" : "none" }} alt="back icon" className={classes.backimage}/></Link>
+          {showBackBtn && <Link to="/home"><img src={Backbtn} style={{ display: showBackBtn ? "block" : "none" }} alt="back icon" className={classes.backimage}/></Link>}
     
             <Typography variant="h6" className={classes.title}>
             Greenhouse X

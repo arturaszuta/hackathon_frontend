@@ -1,3 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 #mapContainer {
     width: 100%;
     height: 100%;
@@ -18,26 +23,18 @@ rect {
     height: 50;
 }
 
-div {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-  }
-  
-  div::after {
-    content: "";
-    background: url(forest-background.jpg);
-    background-size: cover;
-    opacity: 0.6;
-    top: -40px;
-    left: -10px;
-    bottom: -40px;
-    right: -50px;
-    position: absolute;
-    z-index: -1;   
-  }
-
 body {
     background-image: './forest-background.jpg'
+}
+
+.mainContainer {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url(forest-background.jpg);
+    background-size: cover;
+}
+
+.sub-container {
+    height: 100%;
+    width: 100%;
 }

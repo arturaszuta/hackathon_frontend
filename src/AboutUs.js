@@ -33,7 +33,6 @@ const AboutUs = () => {
     const classes = useStyles();
     return (
         <div>
-        <Header />
         <GridList cols={4} cellHeight={400} spacing={20} >
             <GridListTile cols={1}>
                 <Card className={classes.root}>
