@@ -53,7 +53,9 @@ const MapChart = () => {
   function buildMarkers(dataArray, type) {
     if(type = "emissions" && dataArray.length > 0) {
       return  dataArray.map(e => <Marker coordinates={[e.longitude, e.latitude]}>
-      <circle r={determineMarkerSize(e.emissions)} fill={determineMarkerColour(e.emissions)} />
+      <circle r={determineMarkerSize(e.emissions)} 
+              fill={determineMarkerColour(e.emissions)} 
+              fill-opacity="0.4"/>
     </Marker>)
     }
   }
