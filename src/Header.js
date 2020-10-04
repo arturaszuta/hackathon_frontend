@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Logo from './LOGO.png';
 import {Link} from 'react-router-dom';
 import Backbtn from './back-icon.jpg';
+import { useLocation } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,10 +32,16 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
+    const location = useLocation();
+    var showBackBtn = false;
+    if(location.pathname!="/"){
+      showBackBtn = true;
+    }
     return (
         <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <Link to="/"><img src={Backbtn} alt="back icon" className={classes.backimage}/></Link>
+          <Link to="/"><img src={Backbtn} style={{ display: showBackBtn ? "block" : "none" }} alt="back icon" className={classes.backimage}/></Link>
+    
             <Typography variant="h6" className={classes.title}>
             Greenhouse X
             </Typography>

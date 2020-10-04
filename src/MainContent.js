@@ -60,7 +60,7 @@ const MainContent = () => {
          <CardActionArea>
             <CardMedia 
             className={classes.media}
-            image={require('./mapExample.jpg')}
+            image={require('./sweden.jpg')}
             title="emissions map"
             />
          </CardActionArea>
@@ -107,7 +107,7 @@ const MainContent = () => {
          <Link to="/DataInfo">
             <CardMedia 
             className={classes.media}
-            image={require('./mapExample.jpg')}
+            image={require('./dataIcon.png')}
             title="emissions map"
             />
           </Link>
