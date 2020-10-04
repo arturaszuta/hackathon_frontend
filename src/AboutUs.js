@@ -110,8 +110,12 @@ const AboutUs = () => {
                             <CardHeader
                                 className={classes.nameHeadings}
                                 title="Quinn Hodges"
-                                subheader="Innovation Catalyst, NPX"
+                                subheader="I'm an enthusiastic applications developer that loves working with new technologies to help solve the world's problems."
                             />
+                            <CardMedia
+                                className={classes.media}
+                                image={require('./memberPics/quinn.jpg')}
+                                title="quinn"/>
                         </Card>
                     </GridListTile>
                 </GridList>
