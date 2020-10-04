@@ -12,10 +12,12 @@ const useStyles = makeStyles((theme) => ({
     headings: {
         color: 'darkgrey',
         alignItems: 'Center',
+        height: '50px'
     },
     root: {
       maxWidth: 300,
       margin: 8,
+      height: '100%'
     },
     media: {
       height: 100,

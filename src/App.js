@@ -6,9 +6,11 @@ import AboutUs from './AboutUs.js'
 import MainContent from "./MainContent";
 import DataInfo from './DataInfo.js'
 import MapChart from './MapChart.js';
+import Header from "./Header";
 
 const App = () => (
   <Router>
+    <Header />
     <MainContent />
     <Switch>
       <Route path="/" exact>
