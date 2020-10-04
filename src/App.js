@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home.js';
 import AboutUs from './AboutUs.js'
+import DataInfo from './DataInfo.js'
 
 const App = () => (
   <Router>
@@ -12,6 +13,9 @@ const App = () => (
       </Route>
       <Route path="/AboutUs" >
         <AboutUs />
+      </Route>
+      <Route path="/DataInfo" >
+        <DataInfo />
       </Route>
     </Switch>
   </Router>

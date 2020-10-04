@@ -5,7 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import GridList  from '@material-ui/core/GridList';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,23 +23,13 @@ const useStyles = makeStyles((theme) => ({
       spacing: 10,
       
     },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
+
   }));
 
 
 
 const MainContent = () => {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
   
     return (
     <GridList cols={6} cellHeight={400} spacing={20} >
@@ -52,13 +42,12 @@ const MainContent = () => {
             subheader="2017 Fossil Fuel Emissions Data"
             />
             <CardActionArea>
-                <Link to="/AboutUs">
+                
                     <CardMedia
                     className={classes.media}
                     image={require('./mapExample.jpg')}
                     title="emissions map"
                     />
-                </Link>
             </CardActionArea>
       </Card>
          <Card className={classes.root}>
@@ -83,11 +72,13 @@ const MainContent = () => {
            subheader="Use this calculator to find out"
          />
          <CardActionArea>
-            <CardMedia 
-            className={classes.media}
-            image={require('./carbonFootprint.png')}
-            title="emissions map"
-            />
+           <a href='//www.nature.org/en-us/get-involved/how-to-help/carbon-footprint-calculator/'>
+              <CardMedia 
+              className={classes.media}
+              image={require('./carbonFootprint.png')}
+              title="emissions map"
+              />
+            </a>
         </CardActionArea>
        </Card>
        <Card className={classes.root}>
@@ -97,11 +88,13 @@ const MainContent = () => {
            subheader="Learn more about the team"
          />
          <CardActionArea>
+         <Link to="/AboutUs">
             <CardMedia 
             className={classes.media}
             image={require('./npxLogo.png')}
             title="emissions map"
             />
+          </Link>
          </CardActionArea>
        </Card>
        <Card className={classes.root}>
@@ -111,11 +104,13 @@ const MainContent = () => {
            subheader="A more detailed summary of this dataset"
          />
          <CardActionArea>
+         <Link to="/DataInfo">
             <CardMedia 
             className={classes.media}
             image={require('./mapExample.jpg')}
             title="emissions map"
             />
+          </Link>
          </CardActionArea>
        </Card>
      </GridList>

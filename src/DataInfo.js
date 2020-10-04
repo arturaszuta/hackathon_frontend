@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-const AboutUs = () => {
+
+const DataInfo = () => {
     const classes = useStyles();
     return (
         <div>
@@ -37,8 +38,7 @@ const AboutUs = () => {
                         
                             <CardMedia
                             className={classes.media}
-                            image={require('./npxLogo.png')}
-                            title="emissions map"
+                            
                             />
                 </Card>
             </GridListTile>
@@ -46,8 +46,8 @@ const AboutUs = () => {
                 <Card className={classes.root}>
                     <CardHeader
                         className={classes.headings}
-                        title="About Us"
-                        subheader="NPX Innovation"
+                        title="How It's Made"
+                        subheader="A detailed description of the dataset"
                     />
                 </Card>
             </GridListTile>
@@ -55,4 +55,4 @@ const AboutUs = () => {
         </div>
     );
 };
-export default AboutUs;
+export default DataInfo;

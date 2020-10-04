@@ -4,6 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Logo from './LOGO.png';
+import {Link} from 'react-router-dom';
+import Backbtn from './back-icon.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
     image: {
         height: 50,
         width: 70,
+    },
+    backimage: {
+      height: 30,
+        width: 20,
+      paddingRight: 30,
     }
   }));
 
@@ -27,6 +34,7 @@ const Header = () => {
     return (
         <AppBar position="static" className={classes.root}>
         <Toolbar>
+          <Link to="/"><img src={Backbtn} alt="back icon" className={classes.backimage}/></Link>
             <Typography variant="h6" className={classes.title}>
             Greenhouse X
             </Typography>
