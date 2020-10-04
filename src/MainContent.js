@@ -5,7 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import GridList  from '@material-ui/core/GridList';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import Link from '@material-ui/core/Link';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -53,11 +53,12 @@ const MainContent = () => {
             />
             <CardActionArea>
                 <Link to="/AboutUs">
-                    <CardMedia
+                    {/* <CardMedia
                     className={classes.media}
                     image={require('./mapExample.jpg')}
                     title="emissions map"
-                    />
+                    /> */}
+                    ABOUT US
                 </Link>
             </CardActionArea>
       </Card>

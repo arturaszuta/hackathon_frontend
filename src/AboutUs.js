@@ -5,7 +5,7 @@ const AboutUs = () => {
     return (
         <div>
         <Header />
-        <div>hi there jfdlsfjklsfjklsjfklsjfklsjfklsjfklsjf</div>
+        <div>hi there jfdlsfjklsfjklsjfklsjfklsjdasdasdasd fklsjfklsjf</div>
         </div>
     );
 };
