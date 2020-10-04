@@ -54,18 +54,19 @@ const MainContent = () => {
         </CardActionArea>
       </Card>
       <Card className={classes.root}>
-
         <CardHeader
           className={classes.headings}
           title="Swedish Emissions Map"
           subheader="2017 Fossil Fuel Emissions Data"
         />
         <CardActionArea>
+        <Link to="/MapChartSweden">
           <CardMedia
             className={classes.media}
             image={require('./sweden.jpg')}
             title="emissions map"
           />
+          </Link>
         </CardActionArea>
       </Card>
       <Card className={classes.root}>

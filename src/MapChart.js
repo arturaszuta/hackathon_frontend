@@ -24,7 +24,7 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
 
 const MapChart = () => {
-  const [position, setPosition] = useState({ coordinates: [-104.404259, 56.755051], zoom: 3 });
+  const [position, setPosition] = useState({ coordinates: [-104.404259, 56.755051], zoom: 5 });
   const emissions = useEmissions();
   const odiac = useOdiac();
   const [filter, setFilter] = useState("emissions");
@@ -101,7 +101,7 @@ const MapChart = () => {
     console.log("building markers with ", type, dataArray)
     if (dataArray.length > 0) {
       return dataArray.map((e, keyAsIndex) => <Marker key={keyAsIndex} coordinates={[e.longitude, e.latitude]}>
-        <circle r={determineMarkerSize(type == "emissions" ? e.emissions : e.odiak, type)}
+        <circle r={determineMarkerSize(type == "emissions" ? e.emissions : e.odiak, type)} 
           fill={determineMarkerColour(type == "emissions" ? e.emissions : e.odiak, type)}
           fillOpacity={determineOpacity(type == "emissions" ? e.emissions : e.odiak)}/>
       </Marker>)
