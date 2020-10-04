@@ -19,6 +19,7 @@ const App = () => (
       </Route>
       <Route path="/home">
         <MainContent />
+        <Home />
       </Route>
       <Route path="/AboutUs" >
         <AboutUs />
