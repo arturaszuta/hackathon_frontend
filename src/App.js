@@ -9,30 +9,30 @@ import MapChart from './MapChart.js';
 import Header from "./Header";
 
 const App = () => (
-  <div class="mainContainer">
-  <Router>
+  <div className="mainContainer">
+    <Router>
       <Header />
-    <Switch>
-      <div className="sub-container">
-      <Route path="/">
-        <Redirect to="/home" />
-      </Route>
-      <Route path="/home">
-        <MainContent />
-        <Home />
-      </Route>
-      <Route path="/AboutUs" >
-        <AboutUs />
-      </Route>
-      <Route path="/DataInfo" >
-        <DataInfo />
-      </Route>
-      <Route path="/MapChart" >
-        <MapChart />
-      </Route>
-    </div>
-    </Switch>
-  </Router>
+      <Switch>
+        <div className="sub-container">
+          <Route path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home" exact>
+            <MainContent />
+            <Home />
+          </Route>
+          <Route path="/AboutUs" exact>
+            <AboutUs />
+          </Route>
+          <Route path="/DataInfo" >
+            <DataInfo />
+          </Route>
+          <Route path="/MapChart" >
+            <MapChart />
+          </Route>
+        </div>
+      </Switch>
+    </Router>
   </div>
 
 );
