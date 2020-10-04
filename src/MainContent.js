@@ -42,12 +42,13 @@ const MainContent = () => {
             subheader="2017 Fossil Fuel Emissions Data"
             />
             <CardActionArea>
-                
+              <Link to="/MapChart">
                     <CardMedia
                     className={classes.media}
                     image={require('./mapExample.jpg')}
                     title="emissions map"
                     />
+              </Link>
             </CardActionArea>
       </Card>
          <Card className={classes.root}>
