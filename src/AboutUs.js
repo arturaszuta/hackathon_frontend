@@ -1,9 +1,8 @@
 import React from 'react';
-import Header from './Header.js'
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
-import GridList  from '@material-ui/core/GridList';
+import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import { CardHeader } from '@material-ui/core';
 
@@ -26,11 +25,16 @@ const useStyles = makeStyles((theme) => ({
       paddingBotton: '35%',
       spacing: 10,
       alignItems: 'Center'
+    //   height: 50,
+    //     width: 170,
+    //     paddingTop: '65.25%', // 16:9
+    //     paddingLeft: '35%',
+    //     spacing: 10,
     },
     nameHeadings: {
         color: 'darkseagreen',
     },
-  }));
+}));
 
 const AboutUs = () => {
     const classes = useStyles();
