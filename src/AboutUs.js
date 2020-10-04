@@ -34,9 +34,6 @@ const AboutUs = () => {
     return (
         <div>
         <Header />
-<<<<<<< HEAD
-        <div>hi there jfdlsfjklsfjklsjfklsjfklsjdasdasdasd fklsjfklsjf</div>
-=======
         <GridList cols={4} cellHeight={400} spacing={20} >
             <GridListTile cols={1}>
                 <Card className={classes.root}>
@@ -93,7 +90,6 @@ const AboutUs = () => {
                 
             </GridListTile>
         </GridList>
->>>>>>> 203cd9a54e6acf8b32b488e30cfbe7766a688c2a
         </div>
     );
 };
