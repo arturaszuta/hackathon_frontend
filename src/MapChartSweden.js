@@ -78,6 +78,18 @@ const MapChartSweden = () => {
             {buildMarkers(emissions)}
           </ZoomableGroup>
         </ComposableMap>
+        {/* legend */}
+        <div style={{ width: '500px', padding: '20px'}}>
+      <svg><rect width="100" height="40" fill="#248f24" stroke-width="3" stroke="rgb(0,0,0)" x="30px" />
+      <text x="45" y="25" font-family="Verdana" font-size="12" fill="white"> &lt;100</text>
+        <rect width="100" height="40" fill="#c49743" stroke-width="3" stroke="rgb(0,0,0)" x="130px"/>
+      <text x="145" y="25" font-family="Verdana" font-size="12" fill="white"> 100&lt;x&lt;1000</text>
+        <rect width="100" height="40" fill="#ff1a1a" stroke-width="3" stroke="rgb(0,0,0)" x="230px"/>
+      <text x="245" y="25" font-family="Verdana" font-size="12" fill="white"> &gt;1000</text>
+      </svg>
+      
+      
+    </div>
       </div>
     </div>
   );
