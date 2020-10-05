@@ -10,7 +10,7 @@ import {
 
 import useEmissions from "./hooks/useEmissions";
 import useOdiac from "./hooks/useOdiac";
-import Radio from "@material-ui/core/radio"
+import Radio from "@material-ui/core/Radio"
 import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import FormControlLabel from "@material-ui/core/FormControlLabel"
