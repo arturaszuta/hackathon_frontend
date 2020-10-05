@@ -15,6 +15,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 
+
+
 const ComposableMap = styled(UCM)`
   max-height: calc(100vh - 170px);
   width: 100vw;
@@ -114,7 +116,13 @@ const MapChart = () => {
     // <div id="body">
     <div>
     <div id="mapContainer">
-    <div style={{ width: '500px', backgroundColor: 'whiteSmoke', padding: '20px'}}>
+    {selectedValue == "emissions" &&<h1 style={{ float:'right', padding: '30px'}}>
+        CO Emissions by Tonnes - annual combined <br/> Canada | 2017
+    </h1>}
+    {selectedValue == "odiac" &&<h1 style={{ float:'right', padding: '30px'}}>
+        CO2 Emissions by Tonnes - Monthly Total <br/> Canada | 2017
+    </h1>}
+    <div style={{ width: '500px', backgroundColor: 'WhiteSmoke', padding: '20px'}}>
     <FormControlLabel value="emissions" control={      <Radio
         checked={selectedValue === 'emissions'}
         onChange={handleChange}
@@ -129,14 +137,19 @@ const MapChart = () => {
         name="radio-button-demo"
         inputProps={{ 'aria-label': 'B' }}
       />} label="ODIAC CO2 Emissions - 2017" />
-
     </div>
-    {selectedValue == "emissions" &&<h1>
-        CO Emissions by Tonnes - annual combined <br/> Canada | 2017
-    </h1>}
-    {selectedValue == "odiac" &&<h1>
-        CO2 Emissions by Tonnes - Monthly Total <br/> Canada | 2017
-    </h1>}
+    <div style={{ width: '500px', padding: '20px'}}>
+      <svg><rect width="100" height="40" fill="#248f24" stroke-width="3" stroke="rgb(0,0,0)" x="30px" />
+      <text x="45" y="25" font-family="Verdana" font-size="12" fill="white"> &lt;100</text>
+        <rect width="100" height="40" fill="#c49743" stroke-width="3" stroke="rgb(0,0,0)" x="130px"/>
+      <text x="145" y="25" font-family="Verdana" font-size="12" fill="white"> 100&lt;x&lt;1000</text>
+        <rect width="100" height="40" fill="#ff1a1a" stroke-width="3" stroke="rgb(0,0,0)" x="230px"/>
+      <text x="245" y="25" font-family="Verdana" font-size="12" fill="white"> &gt;1000</text>
+      </svg>
+      
+      
+    </div>
+
         <ComposableMap>
           <ZoomableGroup
             zoom={position.zoom}
